@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Macro Economy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--bg:#0a0604;--bg2:#1a1209;--border:#2a1f10;--gold:#d4a438;--gold-l:#f0c95c;--gold-d:#8a6a1a;--fire:#e8751a;--ember:#ff6b2a;--red:#c43a1a;--txt:#f0e6d2;--txt2:#b8a88a;--muted:#7a6b52;--green:#2ecc71;--ared:#e74c3c;--cyan:#40c8d8;--purple:#9b59b6}html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden}body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(200,100,20,.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 0%,rgba(180,80,10,.05) 0%,transparent 50%);pointer-events:none;z-index:0}body>*{position:relative;z-index:1}.ticker-bar{background:#060a12;border-bottom:1px solid var(--border);padding:8px 0;overflow:hidden;position:fixed;top:0;left:0;right:0;z-index:1000}.ticker-track{display:flex;animation:ts 45s linear infinite;white-space:nowrap}@keyframes ts{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 24px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500}.ticker-item .symbol{color:var(--gold);font-weight:600}.ticker-item .value{color:var(--txt);font-weight:600}.ticker-item .change.up{color:var(--green)}.ticker-item .change.down{color:var(--ared)}.nav{position:fixed;top:33px;left:0;right:0;z-index:999;background:rgba(10,6,4,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 40px}.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}.nav-logo .logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--gold),var(--fire));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;color:#0a0604;box-shadow:0 0 20px rgba(212,164,56,.3)}.nav-logo .logo-text{font-family:'Cinzel',serif;font-weight:800;font-size:17px;color:var(--gold-l);letter-spacing:2px;text-transform:uppercase}.nav-links{display:flex;gap:32px;list-style:none}.nav-links a{color:var(--txt2);text-decoration:none;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;transition:color .3s}.nav-links a:hover{color:var(--gold-l);text-shadow:0 0 12px rgba(212,164,56,.4)}.nav-live{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--ember);text-transform:uppercase;letter-spacing:2px}.nav-live .pulse{width:8px;height:8px;background:var(--ember);border-radius:50%;animation:pulse 1.5s infinite;box-shadow:0 0 8px var(--ember)}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5;box-shadow:0 0 16px var(--ember)}}.hero{padding:170px 40px 100px;text-align:center;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:1200px;height:900px;background:radial-gradient(ellipse,rgba(212,164,56,.08) 0%,transparent 50%);pointer-events:none}.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none}.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(212,164,56,.08);border:1px solid rgba(212,164,56,.25);border-radius:24px;padding:8px 20px;font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:32px}.hero-badge .dot{width:6px;height:6px;background:var(--ember);border-radius:50%;animation:pulse 1.5s infinite}.hero h1{font-family:'Cinzel',serif;font-size:clamp(42px,7vw,80px);font-weight:900;line-height:1.05;letter-spacing:4px;margin-bottom:24px;text-transform:uppercase;background:linear-gradient(180deg,#f0e6d2 0%,#d4a438 40%,#c8922a 60%,#8a6a1a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 4px 20px rgba(212,164,56,.3))}.hero .subtitle-line{font-family:'Cinzel',serif;font-size:clamp(14px,2vw,20px);font-weight:600;color:var(--gold-d);letter-spacing:6px;text-transform:uppercase;margin-bottom:24px}.hero p{font-size:17px;color:var(--txt2);max-width:640px;margin:0 auto 44px;line-height:1.8}.hero-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;transition:all .3s;cursor:pointer;border:none;text-transform:uppercase;letter-spacing:1.5px}.btn-primary{background:linear-gradient(135deg,var(--gold),var(--fire));color:#0a0604;box-shadow:0 4px 24px rgba(212,164,56,.35)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(212,164,56,.5)}.btn-secondary{background:rgba(212,164,56,.08);color:var(--gold-l);border:1px solid #c8922a}.btn-secondary:hover{background:rgba(212,164,56,.15)}.section{padding:80px 40px;max-width:1400px;margin:0 auto}.section-header{margin-bottom:48px}.section-label{font-family:'Cinzel',serif;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:4px;color:var(--gold);margin-bottom:12px}.section-title{font-family:'Cinzel',serif;font-size:36px;font-weight:900;letter-spacing:2px;margin-bottom:12px;text-transform:uppercase;background:linear-gradient(180deg,#f0e6d2,#d4a438);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.section-subtitle{font-size:15px;color:var(--txt2);max-width:600px}.divider{border:none;height:1px;background:linear-gradient(90deg,transparent,#c8922a,transparent);max-width:1400px;margin:0 auto;opacity:.4}.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}.data-card{background:linear-gradient(145deg,var(--bg2),#0f0a05);border:1px solid var(--border);border-radius:10px;padding:24px;transition:all .3s;position:relative;overflow:hidden}.data-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-d),transparent);opacity:0;transition:opacity .3s}.data-card:hover{border-color:#c8922a;transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,164,56,.1)}.data-card:hover::before{opacity:1}.data-card .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.data-card .card-label{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px}.card-badge{font-size:9px;font-weight:800;padding:3px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:1px}.badge-live{background:rgba(255,107,42,.15);color:var(--ember);border:1px solid rgba(255,107,42,.3)}.badge-delayed{background:rgba(184,168,138,.1);color:var(--muted);border:1px solid rgba(184,168,138,.2)}.data-card .card-value{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;margin-bottom:8px}.card-change{display:inline-flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;padding:4px 10px;border-radius:4px}.card-change.up{background:rgba(46,204,113,.15);color:var(--green)}.card-change.down{background:rgba(231,76,60,.15);color:var(--ared)}.intel-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}.intel-feed{display:flex;flex-direction:column;gap:16px}.intel-item{background:linear-gradient(145deg,var(--bg2),#0f0a05);border:1px solid var(--border);border-left:3px solid var(--gold-d);border-radius:8px;padding:24px;transition:all .3s;cursor:pointer}.intel-item:hover{border-color:#c8922a;border-left-color:var(--gold);background:#221a0e}.intel-item .intel-meta{display:flex;align-items:center;gap:12px;margin-bottom:12px}.intel-category{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;padding:4px 10px;border-radius:3px}.cat-geopolitics{background:rgba(196,58,26,.2);color:#e8553a;border:1px solid rgba(196,58,26,.3)}.cat-markets{background:rgba(212,164,56,.12);color:var(--gold-l);border:1px solid rgba(212,164,56,.25)}.cat-energy{background:rgba(232,117,26,.15);color:var(--fire);border:1px solid rgba(232,117,26,.3)}.cat-central-bank{background:rgba(155,89,182,.15);color:#c084fc;border:1px solid rgba(155,89,182,.3)}.cat-trade{background:rgba(64,200,216,.12);color:var(--cyan);border:1px solid rgba(64,200,216,.25)}.intel-item .intel-time{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace}.intel-item h3{font-size:17px;font-weight:700;margin-bottom:8px}.intel-item p{font-size:14px;color:var(--txt2);line-height:1.7}.priority-indicator{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-top:14px}.priority-high{color:var(--red)}.priority-medium{color:#f0a030}.priority-standard{color:var(--muted)}.risk-panel{background:linear-gradient(145deg,var(--bg2),#0f0a05);border:1px solid var(--border);border-radius:10px;padding:28px}.risk-panel h3{font-family:'Cinzel',serif;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:3px;margin-bottom:24px;color:var(--gold)}.risk-item{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(42,31,16,.6)}.risk-item:last-child{border-bottom:none}.risk-item .risk-name{font-size:12px;font-weight:600;color:var(--txt2)}.risk-meter{display:flex;align-items:center;gap:10px}.risk-bar{width:80px;height:5px;background:rgba(10,6,4,.8);border-radius:3px;overflow:hidden;border:1px solid rgba(42,31,16,.4)}.risk-bar-fill{height:100%;border-radius:3px}.risk-bar-fill.critical{background:linear-gradient(90deg,var(--red),var(--ember))}.risk-bar-fill.elevated{background:linear-gradient(90deg,var(--gold-d),var(--gold))}.risk-bar-fill.moderate{background:linear-gradient(90deg,#5a4a2a,var(--gold-d))}.risk-bar-fill.low{background:var(--green)}.risk-level{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;min-width:28px;text-align:right}.macro-table{width:100%;border-collapse:collapse;background:linear-gradient(145deg,var(--bg2),#0f0a05);border:1px solid var(--border);border-radius:10px;overflow:hidden}.macro-table thead{background:rgba(212,164,56,.05)}.macro-table th{text-align:left;padding:16px 20px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);border-bottom:1px solid var(--border)}.macro-table td{padding:16px 20px;font-size:14px;border-bottom:1px solid rgba(42,31,16,.4);color:var(--txt2)}.macro-table tr:last-child td{border-bottom:none}.macro-table tr:hover{background:rgba(212,164,56,.03)}.macro-table .mono{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--txt)}.country-cell{display:flex;align-items:center;gap:10px;color:var(--txt);font-weight:600}.flag-icon{width:28px;height:18px;border-radius:2px;background:linear-gradient(135deg,var(--gold-d),#4a3a1a);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--txt)}.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.about-card{background:linear-gradient(145deg,var(--bg2),#0f0a05);border:1px solid var(--border);border-radius:10px;padding:36px;text-align:center;transition:all .35s;position:relative;overflow:hidden}.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s}.about-card:hover{border-color:#c8922a;transform:translateY(-4px);box-shadow:0 12px 48px rgba(212,164,56,.1)}.about-card:hover::before{opacity:1}.about-card .icon{width:60px;height:60px;margin:0 auto 20px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px}.icon-gold{background:rgba(212,164,56,.12);border:1px solid rgba(212,164,56,.2)}.icon-fire{background:rgba(232,117,26,.12);border:1px solid rgba(232,117,26,.2)}.icon-ember{background:rgba(255,107,42,.12);border:1px solid rgba(255,107,42,.2)}.about-card h3{font-family:'Cinzel',serif;font-size:17px;font-weight:700;margin-bottom:12px;color:var(--gold-l);letter-spacing:1px}.about-card p{font-size:14px;color:var(--txt2);line-height:1.7}.contact-section{text-align:center;padding:80px 40px;max-width:640px;margin:0 auto}.subscribe-form{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;justify-content:center}.subscribe-form input{flex:1;min-width:260px;padding:15px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;font-size:14px;color:var(--txt);font-family:'Inter',sans-serif;outline:none;transition:border-color .3s}.subscribe-form input:focus{border-color:#c8922a;box-shadow:0 0 16px rgba(212,164,56,.15)}.subscribe-form input::placeholder{color:var(--muted)}.footer{border-top:1px solid var(--border);padding:40px;background:rgba(10,6,4,.6)}.footer-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}.footer p{font-size:12px;color:var(--muted)}.footer-links{display:flex;gap:24px}.footer-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:color .3s}.footer-links a:hover{color:var(--gold)}.clock-bar{display:flex;justify-content:center;gap:40px;padding:20px 40px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);flex-wrap:wrap}.clock-item{display:flex;align-items:center;gap:8px}.clock-item .city{font-weight:700;color:var(--gold-d);letter-spacing:1px}.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.fade-in.visible{opacity:1;transform:translateY(0)}.fire-line{height:2px;background:linear-gradient(90deg,transparent,rgba(196,58,26,.3),rgba(232,117,26,.5),rgba(212,164,56,.7),rgba(232,117,26,.5),rgba(196,58,26,.3),transparent);margin:0 auto;max-width:800px}@media(max-width:900px){.intel-grid,.about-grid{grid-template-columns:1fr}}@media(max-width:768px){.nav{padding:0 20px}.nav-links{display:none}.hero{padding:140px 20px 60px}.section{padding:60px 20px}.data-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column;text-align:center}}</style>
+</head>
+<body>
+<div class="ticker-bar"><div class="ticker-track">
+<div class="ticker-item"><span class="symbol">S&P 500</span><span class="value">5,667.20</span><span class="change up">+0.82%</span></div>
+<div class="ticker-item"><span class="symbol">NASDAQ</span><span class="value">17,891.45</span><span class="change up">+1.12%</span></div>
+<div class="ticker-item"><span class="symbol">DOW</span><span class="value">42,150.30</span><span class="change down">-0.18%</span></div>
+<div class="ticker-item"><span class="symbol">EUR/USD</span><span class="value">1.0842</span><span class="change up">+0.24%</span></div>
+<div class="ticker-item"><span class="symbol">GBP/USD</span><span class="value">1.2671</span><span class="change down">-0.11%</span></div>
+<div class="ticker-item"><span class="symbol">USD/JPY</span><span class="value">149.32</span><span class="change up">+0.35%</span></div>
+<div class="ticker-item"><span class="symbol">GOLD</span><span class="value">2,178.40</span><span class="change up">+0.56%</span></div>
+<div class="ticker-item"><span class="symbol">WTI CRUDE</span><span class="value">78.24</span><span class="change down">-1.23%</span></div>
+<div class="ticker-item"><span class="symbol">BITCOIN</span><span class="value">68,420.00</span><span class="change up">+2.41%</span></div>
+<div class="ticker-item"><span class="symbol">10Y UST</span><span class="value">4.28%</span><span class="change up">+3bp</span></div>
+<div class="ticker-item"><span class="symbol">VIX</span><span class="value">14.82</span><span class="change down">-5.2%</span></div>
+<div class="ticker-item"><span class="symbol">DXY</span><span class="value">104.21</span><span class="change up">+0.15%</span></div>
+<div class="ticker-item"><span class="symbol">S&P 500</span><span class="value">5,667.20</span><span class="change up">+0.82%</span></div>
+<div class="ticker-item"><span class="symbol">NASDAQ</span><span class="value">17,891.45</span><span class="change up">+1.12%</span></div>
+<div class="ticker-item"><span class="symbol">DOW</span><span class="value">42,150.30</span><span class="change down">-0.18%</span></div>
+<div class="ticker-item"><span class="symbol">EUR/USD</span><span class="value">1.0842</span><span class="change up">+0.24%</span></div>
+<div class="ticker-item"><span class="symbol">GBP/USD</span><span class="value">1.2671</span><span class="change down">-0.11%</span></div>
+<div class="ticker-item"><span class="symbol">USD/JPY</span><span class="value">149.32</span><span class="change up">+0.35%</span></div>
+<div class="ticker-item"><span class="symbol">GOLD</span><span class="value">2,178.40</span><span class="change up">+0.56%</span></div>
+<div class="ticker-item"><span class="symbol">WTI CRUDE</span><span class="value">78.24</span><span class="change down">-1.23%</span></div>
+<div class="ticker-item"><span class="symbol">BITCOIN</span><span class="value">68,420.00</span><span class="change up">+2.41%</span></div>
+<div class="ticker-item"><span class="symbol">10Y UST</span><span class="value">4.28%</span><span class="change up">+3bp</span></div>
+<div class="ticker-item"><span class="symbol">VIX</span><span class="value">14.82</span><span class="change down">-5.2%</span></div>
+<div class="ticker-item"><span class="symbol">DXY</span><span class="value">104.21</span><span class="change up">+0.15%</span></div>
+</div></div>
+
+<nav class="nav"><div class="nav-inner">
+<a href="#" class="nav-logo"><div class="logo-icon">G</div><div class="logo-text">Global Macro</div></a>
+<ul class="nav-links">
+<li><a href="#markets">Markets</a></li>
+<li><a href="#intelligence">Intelligence</a></li>
+<li><a href="#indicators">Indicators</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#subscribe">Subscribe</a></li>
+</ul>
+<div class="nav-live"><div class="pulse"></div>LIVE</div>
+</div></nav>
+
+<section class="hero">
+<div class="hero-badge"><span class="dot"></span>Strategic Intelligence Wire &#8212; Live Updates</div>
+<h1>Global Macro<br>Economy</h1>
+<div class="subtitle-line">Energy &#8226; Currency &#8226; Geopolitics &#8226; Defense</div>
+<p>Real-time geopolitical intelligence, macroeconomic data, and strategic analysis powering critical decisions across global markets and defense sectors.</p>
+<div class="hero-actions">
+<a href="#intelligence" class="btn btn-primary">&#9889; Live Intel Feed</a>
+<a href="#markets" class="btn btn-secondary">&#9670; Market Data</a>
+</div>
+</section>
+
+<div class="clock-bar">
+<div class="clock-item"><span class="city">NEW YORK</span><span id="clockNY">--:--:--</span></div>
+<div class="clock-item"><span class="city">LONDON</span><span id="clockLDN">--:--:--</span></div>
+<div class="clock-item"><span class="city">TOKYO</span><span id="clockTKY">--:--:--</span></div>
+<div class="clock-item"><span class="city">SHANGHAI</span><span id="clockSH">--:--:--</span></div>
+<div class="clock-item"><span class="city">DUBAI</span><span id="clockDXB">--:--:--</span></div>
+</div>
+<div class="fire-line"></div>
+<section class="section fade-in" id="markets">
+<div class="section-header">
+<div class="section-label">Market Data</div>
+<h2 class="section-title">Global Market Snapshot</h2>
+<p class="section-subtitle">Key indices, commodities, and currency pairs updated throughout the trading session.</p>
+</div>
+<div class="data-grid">
+<div class="data-card"><div class="card-header"><span class="card-label">S&P 500</span><span class="card-badge badge-live">Live</span></div><div class="card-value">5,667.20</div><span class="card-change up">&#9650; +46.14 (0.82%)</span></div>
+<div class="data-card"><div class="card-header"><span class="card-label">Crude Oil (WTI)</span><span class="card-badge badge-live">Live</span></div><div class="card-value">$78.24</div><span class="card-change down">&#9660; -0.97 (1.23%)</span></div>
+<div class="data-card"><div class="card-header"><span class="card-label">Gold</span><span class="card-badge badge-live">Live</span></div><div class="card-value">$2,178.40</div><span class="card-change up">&#9650; +12.10 (0.56%)</span></div>
+<div class="data-card"><div class="card-header"><span class="card-label">US 10Y Treasury</span><span class="card-badge badge-delayed">Delayed</span></div><div class="card-value">4.28%</div><span class="card-change up">&#9650; +3bp</span></div>
+<div class="data-card"><div class="card-header"><span class="card-label">EUR/USD</span><span class="card-badge badge-live">Live</span></div><div class="card-value">1.0842</div><span class="card-change up">&#9650; +0.0026 (0.24%)</span></div>
+<div class="data-card"><div class="card-header"><span class="card-label">VIX (Fear Index)</span><span class="card-badge badge-live">Live</span></div><div class="card-value">14.82</div><span class="card-change down">&#9660; -0.81 (5.2%)</span></div>
+<div class="data-card"><div class="card-header"><span class="card-label">Bitcoin</span><span class="card-badge badge-live">Live</span></div><div class="card-value">$68,420</div><span class="card-change up">&#9650; +1,612 (2.41%)</span></div>
+<div class="data-card"><div class="card-header"><span class="card-label">US Dollar Index</span><span class="card-badge badge-live">Live</span></div><div class="card-value">104.21</div><span class="card-change up">&#9650; +0.16 (0.15%)</span></div>
+</div>
+</section>
+
+<hr class="divider">
+
+<section class="section fade-in" id="intelligence">
+<div class="section-header">
+<div class="section-label">Intelligence Feed</div>
+<h2 class="section-title">Strategic Wire</h2>
+<p class="section-subtitle">Curated geopolitical developments and their market implications.</p>
+</div>
+<div class="intel-grid">
+<div class="intel-feed">
+<div class="intel-item"><div class="intel-meta"><span class="intel-category cat-central-bank">Central Banks</span><span class="intel-time">14:32 UTC</span></div><h3>Fed Signals Extended Pause &#8212; Rate Path Increasingly Data-Dependent</h3><p>Federal Reserve minutes reveal deepening divide on inflation trajectory. Markets now pricing 62% probability of a June cut, down from 78% last week.</p><div class="priority-indicator priority-high">&#9679; HIGH PRIORITY</div></div>
+<div class="intel-item"><div class="intel-meta"><span class="intel-category cat-geopolitics">Geopolitics</span><span class="intel-time">12:18 UTC</span></div><h3>Strait of Hormuz Tensions Escalate &#8212; Global Oil Supply at Risk</h3><p>Naval standoff intensifies near critical chokepoint. 21% of global oil passes through Hormuz daily. GCC states raise defense posture as Iran signals capability to disrupt flow.</p><div class="priority-indicator priority-high">&#9679; HIGH PRIORITY</div></div>
+<div class="intel-item"><div class="intel-meta"><span class="intel-category cat-energy">Energy</span><span class="intel-time">10:45 UTC</span></div><h3>OPEC+ Production Quota Dispute Threatens April Output Agreement</h3><p>Iraq and UAE push for higher quotas. Saudi Arabia maintains hardline stance. Brent slips below $82 on uncertainty. Russia reroutes discounted crude to Asian buyers.</p><div class="priority-indicator priority-medium">&#9679; MEDIUM</div></div>
+<div class="intel-item"><div class="intel-meta"><span class="intel-category cat-trade">Trade</span><span class="intel-time">08:30 UTC</span></div><h3>U.S. LNG Exports Surge &#8212; Price-Setting Power Reshapes Global Energy Map</h3><p>American shale production hits record levels. U.S. now controls marginal supply globally. European and Asian buyers locked into long-term contracts.</p><div class="priority-indicator priority-standard">&#9679; STANDARD</div></div>
+<div class="intel-item"><div class="intel-meta"><span class="intel-category cat-markets">Markets</span><span class="intel-time">06:15 UTC</span></div><h3>Dollar Strengthening Pressures Emerging Markets &#8212; INR &amp; CNY Under Stress</h3><p>Oil denominated in USD drives global demand for dollars. Rupee and Yuan weaken as energy import costs rise. Capital outflows from EM accelerate.</p><div class="priority-indicator priority-standard">&#9679; STANDARD</div></div>
+</div>
+
+<div class="risk-panel">
+<h3>Global Risk Matrix</h3>
+<div class="risk-item"><span class="risk-name">Geopolitical Risk</span><div class="risk-meter"><div class="risk-bar"><div class="risk-bar-fill critical" style="width:88%"></div></div><span class="risk-level" style="color:#c43a1a">88</span></div></div>
+<div class="risk-item"><span class="risk-name">Energy Disruption</span><div class="risk-meter"><div class="risk-bar"><div class="risk-bar-fill critical" style="width:82%"></div></div><span class="risk-level" style="color:#c43a1a">82</span></div></div>
+<div class="risk-item"><span class="risk-name">Inflation Pressure</span><div class="risk-meter"><div class="risk-bar"><div class="risk-bar-fill elevated" style="width:68%"></div></div><span class="risk-level" style="color:#d4a438">68</span></div></div>
+<div class="risk-item"><span class="risk-name">Supply Chain</span><div class="risk-meter"><div class="risk-bar"><div class="risk-bar-fill elevated" style="width:65%"></div></div><span class="risk-level" style="color:#d4a438">65</span></div></div>
+<div class="risk-item"><span class="risk-name">Credit Stress</span><div class="risk-meter"><div class="risk-bar"><div class="risk-bar-fill moderate" style="width:42%"></div></div><span class="risk-level" style="color:#8a6a1a">42</span></div></div>
+<div class="risk-item"><span class="risk-name">Cyber Threat</span><div class="risk-meter"><div class="risk-bar"><div class="risk-bar-fill elevated" style="width:72%"></div></div><span class="risk-level" style="color:#d4a438">72</span></div></div>
+<div class="risk-item"><span class="risk-name">EM Currency</span><div class="risk-meter"><div class="risk-bar"><div class="risk-bar-fill elevated" style="width:58%"></div></div><span class="risk-level" style="color:#d4a438">58</span></div></div>
+<div class="risk-item"><span class="risk-name">Liquidity Risk</span><div class="risk-meter"><div class="risk-bar"><div class="risk-bar-fill low" style="width:28%"></div></div><span class="risk-level" style="color:#2ecc71">28</span></div></div>
+</div>
+</div>
+</section>
+<hr class="divider">
+
+<section class="section fade-in" id="indicators">
+<div class="section-header">
+<div class="section-label">Key Indicators</div>
+<h2 class="section-title">Macro Dashboard</h2>
+<p class="section-subtitle">Core macroeconomic indicators across the world's largest economies.</p>
+</div>
+<div style="overflow-x:auto">
+<table class="macro-table">
+<thead><tr><th>Economy</th><th>GDP Growth</th><th>CPI Inflation</th><th>Policy Rate</th><th>Unemployment</th><th>Debt/GDP</th><th>PMI</th></tr></thead>
+<tbody>
+<tr><td><div class="country-cell"><div class="flag-icon">US</div>United States</div></td><td class="mono">2.5%</td><td class="mono">3.1%</td><td class="mono">5.25%</td><td class="mono">3.7%</td><td class="mono">123%</td><td class="mono" style="color:#2ecc71">52.4</td></tr>
+<tr><td><div class="country-cell"><div class="flag-icon">EU</div>Eurozone</div></td><td class="mono">0.8%</td><td class="mono">2.6%</td><td class="mono">4.50%</td><td class="mono">6.4%</td><td class="mono">90%</td><td class="mono" style="color:#e74c3c">46.1</td></tr>
+<tr><td><div class="country-cell"><div class="flag-icon">CN</div>China</div></td><td class="mono">4.9%</td><td class="mono">0.7%</td><td class="mono">3.45%</td><td class="mono">5.2%</td><td class="mono">83%</td><td class="mono" style="color:#2ecc71">50.8</td></tr>
+<tr><td><div class="country-cell"><div class="flag-icon">JP</div>Japan</div></td><td class="mono">1.9%</td><td class="mono">2.8%</td><td class="mono">0.10%</td><td class="mono">2.5%</td><td class="mono">264%</td><td class="mono" style="color:#2ecc71">50.6</td></tr>
+<tr><td><div class="country-cell"><div class="flag-icon">UK</div>United Kingdom</div></td><td class="mono">0.3%</td><td class="mono">4.0%</td><td class="mono">5.25%</td><td class="mono">4.2%</td><td class="mono">101%</td><td class="mono" style="color:#e74c3c">47.5</td></tr>
+<tr><td><div class="country-cell"><div class="flag-icon">IN</div>India</div></td><td class="mono">7.6%</td><td class="mono">5.1%</td><td class="mono">6.50%</td><td class="mono">7.8%</td><td class="mono">83%</td><td class="mono" style="color:#2ecc71">56.9</td></tr>
+<tr><td><div class="country-cell"><div class="flag-icon">RU</div>Russia</div></td><td class="mono">3.6%</td><td class="mono">7.4%</td><td class="mono">16.00%</td><td class="mono">2.9%</td><td class="mono">22%</td><td class="mono" style="color:#2ecc71">53.6</td></tr>
+<tr><td><div class="country-cell"><div class="flag-icon">BR</div>Brazil</div></td><td class="mono">2.9%</td><td class="mono">4.5%</td><td class="mono">11.75%</td><td class="mono">7.6%</td><td class="mono">74%</td><td class="mono" style="color:#2ecc71">52.1</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<hr class="divider">
+
+<section class="section fade-in" id="about">
+<div class="section-header">
+<div class="section-label">Methodology</div>
+<h2 class="section-title">How We Operate</h2>
+<p class="section-subtitle">Our intelligence framework combines quantitative data with qualitative geopolitical analysis.</p>
+</div>
+<div class="about-grid">
+<div class="about-card"><div class="icon icon-gold">&#128202;</div><h3>Data Aggregation</h3><p>We aggregate data from central banks, statistical offices, and financial exchanges worldwide, providing a unified view of the global macro landscape.</p></div>
+<div class="about-card"><div class="icon icon-fire">&#127758;</div><h3>Geopolitical Analysis</h3><p>Our intelligence team monitors diplomatic channels, military movements, trade negotiations, and policy shifts to assess risks before they reach mainstream media.</p></div>
+<div class="about-card"><div class="icon icon-ember">&#9889;</div><h3>Real-Time Delivery</h3><p>Critical developments are flagged and delivered in real time with priority ratings, enabling faster decision-making for investors, analysts, and policymakers.</p></div>
+</div>
+</section>
+
+<div class="fire-line"></div>
+
+<section class="contact-section fade-in" id="subscribe">
+<div class="section-label">Stay Informed</div>
+<h2 class="section-title">Subscribe to the Daily Wire</h2>
+<p class="section-subtitle" style="margin:12px auto 0">Get our morning intelligence briefing delivered to your inbox before markets open.</p>
+<form class="subscribe-form" onsubmit="handleSubscribe(event)">
+<input type="email" placeholder="Enter your email address" required>
+<button type="submit" class="btn btn-primary">Subscribe</button>
+</form>
+<p style="font-size:11px;color:#7a6b52;margin-top:16px">No spam. Unsubscribe anytime. Your data stays private.</p>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+<p>&#169; 2026 Global Macro Economy &#8226; www.globalmacroeconomy.com</p>
+<div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Contact</a><a href="#">API</a></div>
+</div></footer>
+
+<script>
+function updateClocks(){var o={hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false},z={clockNY:'America/New_York',clockLDN:'Europe/London',clockTKY:'Asia/Tokyo',clockSH:'Asia/Shanghai',clockDXB:'Asia/Dubai'},n=new Date();for(var k in z){document.getElementById(k).textContent=n.toLocaleTimeString('en-US',Object.assign({},o,{timeZone:z[k]}))}}updateClocks();setInterval(updateClocks,1000);
+var observer=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});document.querySelectorAll('.fade-in').forEach(function(e){observer.observe(e)});
+function handleSubscribe(e){e.preventDefault();var i=e.target.querySelector('input');alert('Thank you for subscribing! You will receive the Daily Wire at: '+i.value);i.value=''}
+</script>
+</body>
+</html>
